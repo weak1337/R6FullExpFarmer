@@ -62,8 +62,6 @@ public:
 
 	bool is_in_game() {
 		int Round = mem->read<int>(this->RoundManager + 0x2E8);
-		if (Round == 2 || Round == 3)
-			return true;
-		return false;
+		return Round == 2 || Round == 3 || Round == 4;
 	}
 };

@@ -64,6 +64,7 @@ bool __stdcall DllMain(HMODULE hModule,
 	switch (ul_reason_for_call) {
 	case DLL_PROCESS_ATTACH:
 		CloseHandle(CreateThread(0, 0,reinterpret_cast<LPTHREAD_START_ROUTINE>(MainThread), hModule, 0,0));
+		break;
 	case DLL_PROCESS_DETACH:
 		break;
 	}

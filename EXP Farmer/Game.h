@@ -21,21 +21,21 @@ public:
 
 	void set_exp() {
 		uintptr_t Localplayer = get_local_player();
-		uintptr_t information = mem->read<uintptr_t>(Localplayer + 0xA8);
-		mem->write(information + 0x12C, (int)99999);
+		uintptr_t information = mem->read<uintptr_t>(Localplayer + 0xC8);
+		mem->write(information + 0x154, (int)99999);
 	}
 
 	int get_team() {
 		uintptr_t Localplayer = get_local_player();
-		uintptr_t information = mem->read<uintptr_t>(Localplayer + 0xA8);
-		uintptr_t playerinfo = mem->read<uintptr_t>(information + 0x68);
+		uintptr_t information = mem->read<uintptr_t>(Localplayer + 0xC8);
+		uintptr_t playerinfo = mem->read<uintptr_t>(information + 0x88);
 		return mem->read<int>(playerinfo + 0x30);
 	}
 
 	void set_team(int team) {
 		uintptr_t Localplayer = get_local_player();
-		uintptr_t information = mem->read<uintptr_t>(Localplayer + 0xA8);
-		uintptr_t playerinfo = mem->read<uintptr_t>(information + 0x68);
+		uintptr_t information = mem->read<uintptr_t>(Localplayer + 0xC8);
+		uintptr_t playerinfo = mem->read<uintptr_t>(information + 0x88);
 		mem->write(playerinfo + 0x30, team);
 	}
 

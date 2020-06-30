@@ -54,7 +54,7 @@ void LocalPlayer::switch_team() {
 	if (team == 3)
 		mem::write<BYTE>(team_info + 0xAB, 0x4);
 	else
-		mem::write<BYTE>(team_info + 0xAB, 0x4);
+		mem::write<BYTE>(team_info + 0xAB, 0x3);
 }
 
 bool R6Game::is_tabbed_in() {
